@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Brain trainer</string>
+    <string name="go">Go!</string>
+    <string name="default_score">0/0</string>
+    <string name="default_timer_value">60</string>
+    <string name="play_again_button_text">Play again</string>
+    <string name="correct">Correct!</string>
+    <string name="incorrect">Wrong</string>
+    <string name="result_output">Your result is %1$d</string>
+    <string name="score_output">%1$d/%2$d</string>
+    <string name="question_string">%1$d + %2$d</string>
+</resources>

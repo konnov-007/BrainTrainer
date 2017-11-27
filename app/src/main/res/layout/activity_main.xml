@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="konnov.commr.vk.braintrainer.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/startScreenRelativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/brain"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/goButton"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:alpha="0.9"
+            android:background="#64ffda"
+            android:onClick="goButtonClicked"
+            android:text="@string/go"
+            android:textColor="#3c403f"
+            android:textSize="60sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gameRelativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gridLayout"
+            android:layout_alignStart="@+id/gridLayout"
+            android:layout_alignTop="@+id/questionTextView"
+            android:background="#d40ae2fe"
+            android:padding="5dp"
+            android:text="@string/default_timer_value"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/scoreTextView"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/playAgainButton"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"
+            tools:layout_editor_absoluteX="141dp"
+            tools:layout_editor_absoluteY="446dp" />
+
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/gridLayout"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/gridLayout"
+            android:layout_marginTop="12dp"
+            android:background="#feb951"
+            android:padding="5dp"
+            android:text="@string/default_score"
+            android:textSize="30sp"
+            tools:layout_editor_absoluteX="311dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="#fc80f6"
+            android:onClick="playAgainButtonClicked"
+            android:text="@string/play_again_button_text"
+            android:visibility="invisible"
+            tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="446dp" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="368dp"
+            android:layout_height="350dp"
+            android:layout_above="@+id/resultTextView"
+            android:layout_centerHorizontal="true"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="80dp">
+
+            <Button
+                android:id="@+id/firstAnswerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:background="#d2f621"
+                android:onClick="answerButtonClicked"
+                android:tag="0"
+                android:text=""
+                android:textSize="60sp"
+                tools:targetApi="lollipop" />
+
+            <Button
+                android:id="@+id/secondAnswerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:background="#e040fb"
+                android:onClick="answerButtonClicked"
+                android:tag="1"
+                android:text=""
+                android:textSize="60sp"
+                tools:targetApi="lollipop" />
+
+            <Button
+                android:id="@+id/thirdAnswerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:background="#ff5252"
+                android:onClick="answerButtonClicked"
+                android:tag="2"
+                android:text=""
+                android:textSize="60sp"
+                tools:targetApi="lollipop" />
+
+            <Button
+                android:id="@+id/fourthAnswerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:background="#2196f3"
+                android:onClick="answerButtonClicked"
+                android:tag="3"
+                android:text=""
+                android:textSize="60sp"
+                tools:targetApi="lollipop" />
+        </GridLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
