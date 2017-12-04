@@ -1,5 +1,6 @@
 package konnov.commr.vk.braintrainer;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         gridLayout.setVisibility(View.INVISIBLE);
         resultTextView.setText(String.format(getString(R.string.result_output), score));
         resultTextView.animate().translationY(-300).setDuration(2500);
+        voiceOutput();
     }
 
 
@@ -158,6 +160,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void voiceOutput(){
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.loser);
+        mediaPlayer.start();
+
+    }
 
     private void initialization(){
         answers = new int[4];
